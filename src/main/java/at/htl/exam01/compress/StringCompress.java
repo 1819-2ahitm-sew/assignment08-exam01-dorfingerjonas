@@ -42,9 +42,45 @@ public class StringCompress {
      */
     public String[] readFromFile(String fileName) {
 
+        int rows = getNoOfLines(FILE_NAME);
 
-        return null;
+        String[] lines = new String[rows];
+        String[] compressedString = new String[rows];
+        int i = 0;
+
+        try(Scanner scanner = new Scanner(new FileReader(FILE_NAME))) {
+
+            while (scanner.hasNextLine()) {
+                lines[i] = scanner.nextLine();
+                i++;
+            }
+        } catch (FileNotFoundException e) {
+            System.err.println(e.getMessage());
+        }
+
+        char letter;
+
+        for (int k = 0; k < lines.length; k++) {
+
+            letter = lines[k].charAt(0);
+
+            int number  = Integer.parseInt(lines[k].substring(1));
+
+            compressedString[k] = "";
+
+            for (int j = 0; j < number; j++) {
+                compressedString[k] += letter;
+            }
+
+        }
+
+        for (int j = 0; j < lines.length; j++) {
+            lines[j] = compressedString[j];
+        }
+
+        return lines;
     }
+
 
 
     /**
@@ -54,7 +90,9 @@ public class StringCompress {
      * @param lines String-Array
      */
     public void print(String[] lines) {
-
+        for (int i = 0; i < lines.length; i++) {
+            System.out.println(lines[i]);
+        }
     }
 
     /**
@@ -64,8 +102,18 @@ public class StringCompress {
      * @return Anzahl der Zeilen in der Textdatei
      */
     public int getNoOfLines(String fileName) {
+        int rows = 0;
 
+        try(Scanner scanner = new Scanner(new FileReader(FILE_NAME))) {
 
-        return -1;
+            while (scanner.hasNextLine()) {
+                rows++;
+                scanner.nextLine();
+            }
+        } catch (FileNotFoundException e) {
+            System.err.println(e.getMessage());
+        }
+
+        return rows;
     }
 }

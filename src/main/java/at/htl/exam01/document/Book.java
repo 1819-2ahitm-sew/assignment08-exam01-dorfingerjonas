@@ -17,8 +17,6 @@ public class Book extends Document {
     @Override
     public String toString() {
 
-       // String tmp = super.toString();
-
         String tmp = "Buch: " + getAuthor() + ", " + getTitle();
         return tmp;
     }

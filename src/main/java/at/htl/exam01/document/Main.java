@@ -23,8 +23,24 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        Document[] dc = new Document[]{
+                new Book("Rowling", "Harry Potter und der Stein der Weisen"),
+                new Email("Susi", "Bewerbung", "CoolCompany"),
+                new Book("Tolkien", "lordOfTheRings")
+        };
 
+        int bookscounter = 0;
+        int emailcounter = 0;
+
+        for (int i = 0; i < dc.length; i++) {
+            System.out.println(dc[i]);
+            if (dc[i] instanceof Book) {
+                bookscounter++;
+            } else {
+                emailcounter++;
+            }
+        }
+        System.out.println("\nAnzahl Books: " + bookscounter);
+        System.out.println("Anzahl Email: " + emailcounter);
     }
-
-
 }

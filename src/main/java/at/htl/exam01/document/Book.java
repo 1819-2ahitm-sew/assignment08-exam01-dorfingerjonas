@@ -13,4 +13,13 @@ public class Book extends Document {
     public String getTitle() {
         return title;
     }
+
+    @Override
+    public String toString() {
+
+       // String tmp = super.toString();
+
+        String tmp = "Buch: " + getAuthor() + ", " + getTitle();
+        return tmp;
+    }
 }

@@ -81,8 +81,6 @@ public class StringCompress {
         return lines;
     }
 
-
-
     /**
      * Der Inhalt des String-Arrays wird zeilenweise auf der Console ausgegeben
      *

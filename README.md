@@ -10,6 +10,7 @@ Gegeben ist eine Klasse `StringCompress` mit den drei Methoden:
 und der main-Methode.
 
 Implementieren Sie die drei Methoden. Mit der Methode `readFromFile` werden "komprimierte" Zeichenketten eingelesen. Die Methode gibt ein String-Array zurück (wie unten dargestellt).
+##Hallo
 
 
 Inhalt der Datei `sample.txt`
